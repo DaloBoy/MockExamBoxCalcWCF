@@ -12,10 +12,20 @@ namespace MockExamBoxCalcWCF
     [ServiceContract]
     public interface IService1
     {
+        /// <summary>
+        /// DataContracts så metoderne går igennem.
+        /// metoderne kræver værdier i deres paremetre så de kan udføres.
+        /// </summary>
+        /// <param name="length"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
 
+        //Udregner Boxens Volumen
         [OperationContract]
         double GetVolume(double length, double width, double height);
 
+        //Udregner Boxens manglende side, hvis Volumen + 2 sider er kendte
         [OperationContract]
         double GetSide(double volume, double side1, double side2);
     }
